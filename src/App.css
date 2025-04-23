@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply antialiased;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-400 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-500;
+}
+
+/* Prayer content styling */
+.prayer-content {
+  @apply text-gray-800 leading-relaxed;
+}
+
+.prayer-content::before {
+  content: "❝";
+  @apply text-green-500 mr-1;
+}
+
+.prayer-content::after {
+  content: "❞";
+  @apply text-green-500 ml-1;
+}
+
+/* Animation for Ameen button */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.ameen-button:hover .heart-icon {
+  animation: pulse 0.5s ease-in-out;
+}
